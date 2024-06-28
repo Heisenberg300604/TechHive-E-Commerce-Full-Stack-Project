@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
-import { FaUser, FaCartPlus, FaUserTie } from 'react-icons/fa';
+import { FaUser, FaCartPlus, FaUserTie,FaShoppingBag } from 'react-icons/fa';
+import { FaCartShopping } from "react-icons/fa6";
 import { AiFillShopping, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
+import { MdOutlineAttachMoney } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import myContext from '../../Context/MyContext';
 const Dashboard = () => {
   let [isOpen, setIsOpen] = useState(false)
   const context = useContext(myContext)
-  const { product, deleteProduct } = context
+  const { product, deleteProduct,edithandle } = context
   // console.log(product)
   function closeModal() {
     setIsOpen(false)
@@ -26,39 +28,40 @@ const Dashboard = () => {
         <div className="container px-5 mx-auto mb-10">
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className=" border-1 hover:shadow-blue-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-white border-gray-300  px-4 py-3 rounded-lg"  >
-                <div className="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                  <FaUserTie size={50} />
+              <div className="  bg-white   px-4 py-3 "  >
+                <div className="text-green-600 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                  <MdOutlineAttachMoney  size={58}/>
                 </div>
                 <h2 className="title-font font-medium text-3xl text-black fonts1">10</h2>
-                <p className=" text-blue-500  font-bold">Total Products</p>
+                <p className=" text-green-500  font-bold">Total Income</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className=" border-1 hover:shadow-blue-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-white border-gray-300  px-4 py-3 rounded-lg"  >
-                <div className="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                  <FaUserTie size={50} />
+              <div className=" bg-white px-4 py-3 "  >
+                <div className="text-cyan-400 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                  <FaShoppingBag size={50} />
                 </div>
                 <h2 className="title-font font-medium text-3xl text-black fonts1">10</h2>
-                <p className=" text-blue-500  font-bold">Total Orders</p>
+                <p className=" text-cyan-400  font-bold">Total Orders</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className=" border-1 hover:shadow-blue-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-white border-gray-300  px-4 py-3 rounded-lg"  >
-                <div className="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                  <FaUserTie size={50} />
+              <div className=" border-1 hover:shadow-blue-600  bg-white border-gray-300  px-4 py-3 rounded-lg"  >
+                <div className="text-purple-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                  <FaUser size={50} />
+                  
                 </div>
                 <h2 className="title-font font-medium text-3xl text-black fonts1">10</h2>
-                <p className=" text-blue-500  font-bold">Total Users</p>
+                <p className=" text-purple-500  font-bold">Total Users</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className=" border-1 hover:shadow-blue-600 shadow-[inset_0_0_10px_rgba(0,0,0,0.6)] bg-white border-gray-300  px-4 py-3 rounded-lg"  >
-                <div className="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                  <FaUserTie size={50} />
+              <div className=" border-1  bg-white border-gray-300  px-4 py-3 rounded-lg"  >
+                <div className=" text-amber-300 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                  <FaCartShopping  size={50} />
                 </div>
                 <h2 className="title-font font-medium text-3xl text-black fonts1">10</h2>
-                <p className=" text-blue-500  font-bold">Total Products</p>
+                <p className=" text-amber-400  font-bold">Total Products</p>
               </div>
             </div>
           </div>
@@ -157,11 +160,14 @@ const Dashboard = () => {
                                       <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                     </svg>
                                   </div>
-                                  <div  >
+                                  <Link to={'/updateproducts'}>
+                                  <div onClick={()=> edithandle(item)} >
+                                   {/* // editehandle yaha par fields ko set krdega unki info ke saath aur updateproducts route par usko update kr payenge */}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                       <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                     </svg>
                                   </div>
+                                  </Link>
                                 </div>
                               </div>
                             </td>

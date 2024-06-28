@@ -15,6 +15,7 @@ import Dashboard from '../Pages/Admin/Dashboard';
 import { ProtectedRoutesForAdmin } from './ProtectedRoutesforAdmin';
 import NotFound from '../Pages/NotFound';
 import AddProducts from '../Pages/Admin/AddProducts';
+import UpdateProducts from '../Pages/Admin/UpdateProducts';
 
 
 const router = createBrowserRouter([
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
     {
         path: 'addproducts',
         element: <AddProducts/>
+    },
+    {
+        path: 'updateproducts',
+        element: <UpdateProducts/>
     },
     {
         path:'*',

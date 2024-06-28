@@ -88,7 +88,9 @@ function MyState(props) {
             toast.success("Product details updated successfully !")
             getProductData();
             setLoading(false)
-            window.location.href = '/dashboard'
+            setTimeout(()=>{
+                window.location.href = '/dashboard'
+            },900);
         }catch(error){
             setLoading(false)
             console.log(error);
