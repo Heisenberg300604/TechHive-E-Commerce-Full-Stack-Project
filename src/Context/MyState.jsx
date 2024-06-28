@@ -34,7 +34,7 @@ function MyState(props) {
         setLoading(true)
         try{
             await addDoc(productRef,products)
-            toast.success("Prodcut added to cart successfully")
+            toast.success("Product added to cart successfully")
             setTimeout(()=>{
                 window.location.href = '/dashboard'
             },800);
