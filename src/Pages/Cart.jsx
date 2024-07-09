@@ -2,13 +2,17 @@ import { Heart, Trash } from 'lucide-react'
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromCart } from '../Redux/cartSlice';
+import Modal from '../Components/Modal';
+import { toast } from "react-toastify";
+import { addDoc, collection } from 'firebase/firestore';
+import { fireDB } from '../Config/Firebaseconfig';
 
 export function Cart() {
-  const cartItems = useSelector((state)=>state.cart);
+  const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch()
   // const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
-  
-  const deleteCart = (item)=>{
+
+  const deleteCart = (item) => {
     dispatch(deleteFromCart(item));
   }
 
@@ -27,6 +31,88 @@ export function Cart() {
   }, [cartItems])
   const shipping = parseInt(80);
   const grandTotal = shipping + totalAmount
+
+  const [name, setName] = useState("")
+  const [address, setAddress] = useState("");
+  const [pincode, setPincode] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  
+  const buyNow = async () => {
+
+    if (name === "" || address == "" || pincode == "" || phoneNumber == "") {
+      return toast.error("All fields are required", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      })
+    }
+    const addressInfo = {
+      name,
+      address,
+      pincode,
+      phoneNumber,
+      date: new Date().toLocaleString(
+        "en-US",
+        {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        }
+      )
+    }
+    // console.log(addressInfo)
+
+    var options = {
+      key: "", // used my own secret key and all toh apni key daal ke use krna :)
+      key_secret: "",
+      amount: parseInt(grandTotal * 100),
+      currency: "INR",
+      order_receipt: 'order_rcptid_' + name,
+      name: "Tech Hive Electronic Store",
+      description: "for testing purpose",
+      handler: function (response) {
+
+        // console.log(response)
+        toast.success('Payment Successful')
+
+        const paymentId = response.razorpay_payment_id
+        // store in firebase 
+        const orderInfo = {
+          cartItems,
+          addressInfo,
+          date: new Date().toLocaleString(
+            "en-US",
+            {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            }
+          ),
+          email: JSON.parse(localStorage.getItem("user")).user.email,
+          userid: JSON.parse(localStorage.getItem("user")).user.uid,
+          paymentId
+        }
+
+        try {
+          const result = addDoc(collection(fireDB, "orders"), orderInfo)
+        } catch (error) {
+          console.log(error)
+        }
+      },
+
+      theme: {
+        color: "#3399cc"
+      }
+    };
+    var pay = new window.Razorpay(options);
+    pay.open();
+    // console.log(pay)
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-2 lg:px-0">
@@ -61,9 +147,9 @@ export function Cart() {
                               </a>
                             </h3>
                           </div>
-                          
+
                           <div className="mt-1 flex items-end">
-                            
+
                             <p className="text-sm font-medium text-gray-900">
                               &nbsp;&nbsp;₹ {product.price}
                             </p>
@@ -88,9 +174,9 @@ export function Cart() {
                       </button>
                     </div>
                     <div className="ml-6 flex text-sm">
-                      <button 
-                      onClick={()=> deleteCart(product)}
-                      type="button" className="flex items-center space-x-1 px-2 py-1 pl-0">
+                      <button
+                        onClick={() => deleteCart(product)}
+                        type="button" className="flex items-center space-x-1 px-2 py-1 pl-0">
                         <Trash size={12} className="text-red-500" />
                         <span className="text-xs font-medium text-red-500">Remove</span>
                       </button>
@@ -128,9 +214,11 @@ export function Cart() {
                   <dd className="text-base font-medium text-gray-900">₹ {grandTotal}</dd>
                 </div>
               </dl>
+              <Modal name={name} address={address} pincode={pincode} phoneNumber={phoneNumber} setName={setName} setAddress={setAddress} setPincode={setPincode} setPhoneNumber={setPhoneNumber} buyNow={buyNow} />
             </div>
           </section>
         </form>
+        
       </div>
     </div>
   )

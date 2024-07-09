@@ -4,7 +4,6 @@ function Footer() {
   return (
     <div>
       <footer className="w-full text-slate-500">
-        {/*      <!-- Main footer --> */}
         <div className="border-t border-slate-200 bg-slate-100 pt-16 pb-12 text-sm">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
@@ -16,39 +15,39 @@ function Footer() {
                   className="mb-6 text-base font-medium text-slate-700"
                   id="footer-product-5-logo-sub"
                 >
-                  Product
+                  Quick Links
                 </h3>
                 <ul>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Features
+                      Shop
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Customers
+                      Home
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Why us?
+                      Your WishList
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Pricing
+                      Cart
                     </a>
                   </li>
                 </ul>
@@ -62,39 +61,31 @@ function Footer() {
                   id="footer-docs-5-logo-sub"
                 >
 
-                  Customer Support
+                  User
                 </h3>
                 <ul>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Contact Us
+                      Login
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Help Center
+                      Register
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Careers
+                      Admin
                     </a>
                   </li>
                 </ul>
@@ -107,49 +98,42 @@ function Footer() {
                   className="mb-6 text-base font-medium text-slate-700"
                   id="footer-about-5-logo-sub"
                 >
-                  About us
+                  About Creator
                 </h3>
                 <ul>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      About us
+                      Github
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Careers
+                      Linkedin
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Leadership
+                      LeetCode Profile
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Blog
+                      Twitter
                     </a>
                   </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Events
-                    </a>
-                  </li>
+                  
                 </ul>
               </nav>
               <nav
@@ -160,47 +144,30 @@ function Footer() {
                   className="mb-6 text-base font-medium text-slate-700"
                   id="footer-get-in-touch-5-logo-sub"
                 >
-                  Get in touch
+                  More
                 </h3>
                 <ul>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Contact
+                      Your Orders
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
                       href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
+                      className="transition-colors duration-300 hover:text-blue-500 focus:text-blue-600"
                     >
-                      Support
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Partners
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Join research
+                      Profile
                     </a>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
-        </div>
-        {/*      <!-- Sub Footer --> */}
+        </div> 
         <div className="border-t border-slate-200 bg-slate-100 py-4 text-sm">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-4 items-center gap-6 md:grid-cols-8 lg:grid-cols-12">
@@ -218,35 +185,6 @@ function Footer() {
                 className="col-span-3 md:col-span-4 lg:col-span-6"
                 aria-labelledby="subfooter-links-5-logo-sub"
               >
-                <h3 className="sr-only" id="subfooter-links-5-logo-sub">
-                  Get in touch
-                </h3>
-                <ul className="flex flex-wrap items-center justify-end gap-2 lg:gap-4">
-                  <li className="leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      T&C
-                    </a>
-                  </li>
-                  <li className="leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Privacy
-                    </a>
-                  </li>
-                  <li className="leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-green-500 focus:text-green-600"
-                    >
-                      Cookies
-                    </a>
-                  </li>
-                </ul>
               </nav>
             </div>
           </div>
@@ -254,12 +192,12 @@ function Footer() {
         <div className="py-4 text-sm border-t border-blue-200/90 bg-blue-100/80">
           <div className="container px-6 mx-auto">
             <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
-              <div className="col-span-2 md:col-span-4 lg:col-span-6">Copyright 2022 Brand</div>
+              <div className="col-span-2 md:col-span-4 lg:col-span-6">Copyright 2024 | Nibedan</div>
               <nav aria-labelledby="footer-social-links-light" className="col-span-2 text-right md:col-span-4 lg:col-span-6">
                 <h2 className="sr-only" id="footer-social-links-light">Social Media Links</h2>
                 <ul className="flex items-center justify-end gap-4">
                   <li>
-                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-green-600 focus:text-green-700">
+                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-blue-600 focus:text-blue-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" className="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb01-light desc-tb01-light">
                         <title id="title-tb01-light">Icon title</title>
                         <desc id="desc-tb01-light">A more detailed description of the icon</desc>
@@ -268,7 +206,7 @@ function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-green-600 focus:text-green-700">
+                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-blue-600 focus:text-blue-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" className="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb02-light desc-tb02-light">
                         <title id="title-tb02-light">Icon title</title>
                         <desc id="desc-tb02-light">A more detailed description of the icon</desc>
@@ -277,7 +215,7 @@ function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-green-600 focus:text-green-700">
+                    <a href="javascript:void(0)" className="transition-colors duration-300 hover:text-blue-600 focus:text-blue-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" className="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb03-light desc-tb03-light">
                         <title id="title-tb03-light">Icon title</title>
                         <desc id="desc-tb03-light">A more detailed description of the icon</desc>

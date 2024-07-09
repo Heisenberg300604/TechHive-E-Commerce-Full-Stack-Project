@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import myContext from './MyContext';
 import { fireDB } from "../Config/Firebaseconfig";
 import { toast } from "react-toastify";
-import { QuerySnapshot, Timestamp, collection, onSnapshot, orderBy, query,addDoc, setDoc, deleteDoc,doc } from "firebase/firestore";
+import { QuerySnapshot, Timestamp, collection, onSnapshot, orderBy, query,addDoc, setDoc, deleteDoc,doc, getDocs } from "firebase/firestore";
 
 function MyState(props) {
     
@@ -72,8 +72,26 @@ function MyState(props) {
         }
     }
 
+    const [order,setOrder] = useState([]);
+
+    const getOrderData = async()=>{
+        try {
+            const result = await getDocs(collection(fireDB,"orders"))
+            const ordersArray =[];
+            result.forEach((doc)=>{
+                ordersArray.push(doc.data());
+            });
+            setOrder(ordersArray);
+            console.log(ordersArray);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(()=>{
         getProductData();
+        getOrderData();
+        getUserData();
     },[])
 
     const edithandle =(item)=>{
@@ -110,10 +128,27 @@ function MyState(props) {
             console.log(error);
         }
     }
+    const [user, setUser] = useState([]);
+
+  const getUserData = async () => {
+    setLoading(true)
+    try {
+      const result = await getDocs(collection(fireDB, "users"))
+      const usersArray = [];
+      result.forEach((doc) => {
+        usersArray.push(doc.data());
+      });
+      setUser(usersArray);
+      console.log(usersArray)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
     return (
         <myContext.Provider value={{
-            products,setProducts,addProduct,loading,setLoading,product,edithandle,updateProduct,deleteProduct
+            products,setProducts,addProduct,loading,setLoading,product,edithandle,updateProduct,deleteProduct,order,user
         }}>
            {props.children}
         </myContext.Provider>
