@@ -14,7 +14,7 @@ const Testimonial = () => {
         <div class="flex items-center gap-4">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1715615245424-97d67b181c89?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://res.cloudinary.com/dyfhx6mqp/image/upload/v1720981033/Chandan_Sahoo_xmu3pb.png"
             class="size-14 rounded-full object-cover"
           />
 
@@ -72,7 +72,7 @@ const Testimonial = () => {
               </svg>
             </div>
 
-            <p class="mt-0.5 text-lg font-medium text-gray-900">Jürgen Müller</p>
+            <p class="mt-0.5 text-lg font-medium text-gray-900">Chandan Sahoo</p>
           </div>
         </div>
 
@@ -85,7 +85,7 @@ const Testimonial = () => {
         <div class="flex items-center gap-4">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1614769842925-8193ebda68b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDcwfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            src="https://res.cloudinary.com/dyfhx6mqp/image/upload/v1720981064/Arsh_Tiwari_oocqph.jpg"
             class="size-14 rounded-full object-cover"
           />
 
@@ -133,7 +133,7 @@ const Testimonial = () => {
               </svg>
             </div>
 
-            <p class="mt-0.5 text-lg font-medium text-gray-900">Sophie Dubois</p>
+            <p class="mt-0.5 text-lg font-medium text-gray-900">Arsh Tiwari</p>
           </div>
         </div>
 
@@ -146,7 +146,7 @@ const Testimonial = () => {
         <div class="flex items-center gap-4">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://res.cloudinary.com/dyfhx6mqp/image/upload/v1720981057/Arush_Karnatak_qyve7t.jpg"
             class="size-14 rounded-full object-cover"
           />
 
@@ -204,7 +204,7 @@ const Testimonial = () => {
               </svg>
             </div>
 
-            <p class="mt-0.5 text-lg font-medium text-gray-900">Carlos Rodríguez</p>
+            <p class="mt-0.5 text-lg font-medium text-gray-900">Arush Karnatak</p>
           </div>
         </div>
 
