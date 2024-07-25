@@ -3,7 +3,14 @@ import myContext from '../Context/MyContext'
 
 function Filter() {
     const context = useContext(myContext)
-    const {product} = context
+    const {product,searchkey, setSearchKey, filterType,setFilterType,
+        filterPrice, setFilterPrice} = context;
+        // console.log(filterType)
+        const resetFields = ()=>{
+            setSearchKey('');
+            setFilterType('');
+            setFilterPrice('');
+        }
     return (
         <div>
             <div className=' container mx-auto px-4 mt-5 mb-5'>
@@ -18,6 +25,8 @@ function Filter() {
                             type="text"
                             name="searchkey"
                             id="searchkey"
+                            value={searchkey}
+                            onChange={e=>setSearchKey(e.target.value)}
                             placeholder="Search here"
                             className="px-10 py-3 w-full rounded-xl bg-violet-0 border-transparent outline-0 text-sm" />
                     </div>
@@ -30,30 +39,28 @@ function Filter() {
                             Filters
                         </p>
                     </div>
-                        <button className="px-4 py-3 hover:bg-blue-500 hover:text-white text-blue-600 border border-blue-600 text-sm font-medium rounded-md" >
+                    
+                        <button onClick={resetFields} className="px-4 py-3 hover:bg-blue-500 hover:text-white text-blue-600 border border-blue-600 text-sm font-medium rounded-md" >
                             Reset Filter
                         </button>
                     </div>
                     <div>
+                        {/* Error in Filter By Category can't filter by category Bug found to be fixed */}
                         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
-                            <select className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" >
+                            <select value={filterType} onChange={(e)=>{setFilterType(e.target.value)}} className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" >
                                 {product.map((item, index) => {
                                     return (
                                         <option key={index} value={item.category}>{item.category}</option>
                                     )
                                 })}
-                                <option value="jacket">Mobile Phones</option>
-                                {/* <option value="shirt">Tablet</option>
-                                <option value="mobile">Laptops</option>
-                                <option value="jacket">Television</option> */}
                             </select>
-                            <select className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0  focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" >
-                                <option value="100">100</option>
-                                <option value="200">200</option>
-                                <option value="300">300</option>
-                                <option value="400">400</option>
+                            <select value={filterPrice} onChange={(e)=>{setFilterPrice(e.target.value)}} className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0  focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" >
+                                {product.map((item,index)=>{
+                                    return(
+                                        <option key={index} value={item.price}>{item.price}</option>
+                                    )
+                                })}
                             </select>
-
                         </div>
                     </div>
                 </div>

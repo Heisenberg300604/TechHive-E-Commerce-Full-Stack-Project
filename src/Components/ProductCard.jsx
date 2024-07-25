@@ -6,11 +6,10 @@ import { toast } from 'react-toastify';
 
 const ProductCard = () => {
     const context = useContext(myContext)
-    const { product } = context;
+    const { product,searchkey,filterType,filterPrice } = context;
 
     const dispatch = useDispatch()
     const cartItems = useSelector((state)=>state.cart);
-    console.log(cartItems);
 
     const addCart = (item)=>{
         dispatch(addToCart(item));
@@ -22,12 +21,14 @@ const ProductCard = () => {
     return (
         <div>
             <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
-                {product.map((item, index) => (
+                {product.filter((obj) => obj.title.toLowerCase().includes(searchkey))
+                        .filter((obj) => obj.category.toLowerCase().includes(filterType))
+                        .filter((obj) => obj.price.includes(filterPrice)).map((item, index) => (
                     <div key={index} className="flex flex-col rounded-lg border h-full">
                         <div className='w-full flex justify-center items-center'>
                             <img
                                 src={item.imageUrl}
-                                alt="Laptop"
+                                alt={item.title}
                                 className="aspect-[16/9] w-48 rounded-lg md:aspect-auto md:h-[300px] lg:h-[200px] p-3"
                             />
                         </div>

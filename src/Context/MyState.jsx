@@ -146,9 +146,15 @@ function MyState(props) {
     }
   }
 
+  const [searchkey,setSearchKey] = useState('');
+  const [filterType,setFilterType] = useState('')
+  const [filterPrice,setFilterPrice] = useState('')
+
     return (
         <myContext.Provider value={{
-            products,setProducts,addProduct,loading,setLoading,product,edithandle,updateProduct,deleteProduct,order,user
+            products,setProducts,addProduct,loading,setLoading,product,edithandle,updateProduct,deleteProduct,order,user,
+            searchkey,setSearchKey,filterType,setFilterType,
+            filterPrice,setFilterPrice
         }}>
            {props.children}
         </myContext.Provider>
