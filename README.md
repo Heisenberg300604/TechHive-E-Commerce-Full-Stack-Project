@@ -13,7 +13,7 @@ TechHive is a feature-rich E-commerce platform built using React, Firebase, and 
 
 ## Demo
 
-Check out the live demo: [TechHive Live](techhive-electronics-market.vercel.app)
+Check out the live demo: [TechHive Live](https://techhive-electronics-market.vercel.app/)
 
 ## Installation
 
