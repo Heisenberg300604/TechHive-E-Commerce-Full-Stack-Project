@@ -30,8 +30,8 @@ Before running the project locally, ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/TechHive.git
-   cd TechHive
+   git clone https://github.com/Heisenberg300604/TechHive-E-Commerce-Full-Stack-Project.git
+   cd TechHive-E-Commerce-Full-Stack-Project
 2. **Install dependencies:**
 
     ```bash
@@ -161,4 +161,4 @@ We welcome contributions to TechHive! If you'd like to contribute, please follow
 2. **Clone the repository** to your local machine.
 
    ```bash
-   git clone https://github.com/yourusername/TechHive.git
+   git clone https://github.com/Heisenberg300604/TechHive-E-Commerce-Full-Stack-Project.git
