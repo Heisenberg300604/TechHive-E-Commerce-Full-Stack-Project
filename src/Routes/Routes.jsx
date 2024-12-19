@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"productinfo/:id",
-                element: <ProductInfo/>,
+                element: <ProductInfo/>, // Work upon this component to display the product details
             },
             {
                 path:"wishlist",
